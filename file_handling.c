@@ -1,9 +1,14 @@
+/* ============================================================
+ *  FILE HANDLING MODULE
+ *  Handles CSV file storage operations
+ * ============================================================ */
 #include "file_handling.h"
 
 /* ============================================================
  *  SAVE PASSENGER TO CSV FILE
  * ============================================================ */
 
+/* Store Passenger Record into CSV File */
 void savePassengerToFile(struct Passenger p) {
 
     FILE *fp;
