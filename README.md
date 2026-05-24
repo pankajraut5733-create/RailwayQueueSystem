@@ -7,7 +7,7 @@
 # Project Overview
 
 The Railway Queueing System is a console-based mini project developed using the C programming language.
-
+This project demonstrates modular programming and GitHub collaboration using C language.
 This project simulates a railway reservation and passenger management system using different data structures such as Queue, Stack, Linked List, and Structures.
 
 The system allows passengers to:
