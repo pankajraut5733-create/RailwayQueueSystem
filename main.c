@@ -1,3 +1,7 @@
+/* ============================================================
+ *  MAIN MODULE
+ *  Controls the Railway Queueing System
+ * ============================================================ */
 #include "common.h"
 #include "queue.h"
 #include "emergency.h"
@@ -10,6 +14,7 @@ int passengerIDCounter = 1000;
  *  DISPLAY MENU
  * ============================================================ */
 
+/* Display Main Menu */
 void displayMenu() {
 
     printf("\n");
@@ -49,6 +54,7 @@ void displayMenu() {
  *  MAIN FUNCTION
  * ============================================================ */
 
+/* Main Driver Function */
 int main() {
 
     struct Queue bookingQueue;
