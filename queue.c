@@ -1,3 +1,7 @@
+/* ============================================================
+ *  QUEUE MANAGEMENT MODULE
+ *  Handles normal passenger booking queue
+ * ============================================================ */
 #include "queue.h"
 #include "train.h"
 #include "waiting_list.h"
@@ -7,7 +11,7 @@
 /* ============================================================
  *  QUEUE FUNCTIONS
  * ============================================================ */
-
+/* Initialize Queue */
 void initQueue(struct Queue *q) {
 
     q->front = 0;
@@ -24,7 +28,7 @@ int isQueueFull(struct Queue *q) {
 
     return (q->size == MAX_QUEUE);
 }
-
+/* Add Passenger to Queue */
 int enqueue(struct Queue *q, struct Passenger p) {
 
     if (isQueueFull(q))
@@ -38,7 +42,7 @@ int enqueue(struct Queue *q, struct Passenger p) {
 
     return 1;
 }
-
+/* Remove Passenger from Queue */
 struct Passenger dequeue(struct Queue *q) {
 
     struct Passenger empty;
@@ -63,7 +67,7 @@ void displayQueue(struct Queue *q) {
 
     if (isQueueEmpty(q)) {
 
-        printf("\n  [!] Booking queue is empty.\n");
+        printf("\n  [!] No passengers available in booking queue.\n");
 
         return;
     }
@@ -91,6 +95,8 @@ void displayQueue(struct Queue *q) {
     printf("  +-------+----------------------+-----+----------------+-------+\n");
 
     printf("  Total passengers in queue: %d\n", q->size);
+    printf("  Queue Capacity Remaining : %d\n",
+       MAX_QUEUE - q->size);
 }
 
 /* ============================================================
