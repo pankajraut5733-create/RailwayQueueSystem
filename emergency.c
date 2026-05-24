@@ -1,3 +1,7 @@
+/* ============================================================
+ *  EMERGENCY PRIORITY MODULE
+ *  Handles VIP and emergency passenger booking
+ * ============================================================ */
 #include "emergency.h"
 #include "train.h"
 #include "waiting_list.h"
@@ -6,7 +10,7 @@
 /* ============================================================
  *  STACK FUNCTIONS
  * ============================================================ */
-
+/* Initialize Emergency Stack */
 void initStack(struct Stack *s) {
 
     s->top = -1;
@@ -21,7 +25,7 @@ int isStackFull(struct Stack *s) {
 
     return (s->top == MAX_STACK - 1);
 }
-
+/* Push Emergency Passenger */
 int push(struct Stack *s, struct Passenger p) {
 
     if (isStackFull(s))
@@ -33,7 +37,7 @@ int push(struct Stack *s, struct Passenger p) {
 
     return 1;
 }
-
+/* Serve Highest Priority Passenger */
 struct Passenger pop(struct Stack *s) {
 
     struct Passenger empty;
@@ -56,8 +60,7 @@ void displayStack(struct Stack *s) {
 
     if (isStackEmpty(s)) {
 
-        printf("\n  [!] No emergency passengers.\n");
-
+        printf("\n  [!] No emergency passengers in priority stack.\n");
         return;
     }
 
@@ -82,6 +85,8 @@ void displayStack(struct Stack *s) {
 
     printf("  Total emergency passengers: %d\n",
            s->top + 1);
+    printf("  Emergency stack capacity left: %d\n",
+       MAX_STACK - (s->top + 1));
 }
 
 /* ============================================================
