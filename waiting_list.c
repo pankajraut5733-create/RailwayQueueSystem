@@ -1,3 +1,7 @@
+/* ============================================================
+ *  WAITING LIST MODULE
+ *  Handles linked list based waiting passengers
+ * ============================================================ */
 #include "waiting_list.h"
 
 /* ============================================================
@@ -11,7 +15,7 @@ int waitingCount = 0;
 /* ============================================================
  *  ADD TO WAITING LIST
  * ============================================================ */
-
+/* Add Passenger to Waiting List */
 void addToWaitingList(struct Passenger p) {
 
     struct WaitingNode *newNode;
@@ -63,7 +67,7 @@ void addToWaitingList(struct Passenger p) {
 /* ============================================================
  *  REMOVE FROM WAITING LIST
  * ============================================================ */
-
+/* Remove Passenger from Waiting List */
 struct Passenger removeFromWaitingList() {
 
     struct Passenger empty;
@@ -94,12 +98,12 @@ struct Passenger removeFromWaitingList() {
 /* ============================================================
  *  DISPLAY WAITING LIST
  * ============================================================ */
-
+/* Display All Waiting Passengers */
 void displayWaitingList() {
 
     if (waitingHead == NULL) {
 
-        printf("\n  [!] Waiting list is empty.\n");
+        printf("\n  [!] No passengers currently in waiting list.\n");
 
         return;
     }
@@ -130,4 +134,5 @@ void displayWaitingList() {
 
     printf("  Total on waiting list: %d\n",
            waitingCount);
+    printf("  Waiting list implemented using Linked List.\n");
 }
