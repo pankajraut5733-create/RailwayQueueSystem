@@ -1,3 +1,7 @@
+/* ============================================================
+ *  COMMON HEADER FILE
+ *  Contains structures, constants, and global variables
+ * ============================================================ */
 #ifndef COMMON_H
 #define COMMON_H
 
